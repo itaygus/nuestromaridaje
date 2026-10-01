@@ -26,8 +26,8 @@ img{max-width:100%; display:block}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--mandarina); outline-offset:3px; border-radius:6px}
 .wrap{max-width:680px; margin:0 auto; padding:0 24px}
-section{padding:88px 0 0}
-#festejos,#info{padding-top:115px}
+section{padding:72px 0 0}
+#festejos,#info{padding-top:92px}
 h2{font-family:var(--display); font-weight:800; font-size:clamp(44px,11vw,64px); line-height:.95; margin:0 0 28px; letter-spacing:.01em; display:flex; align-items:center; gap:14px}
 .pizca{display:inline-flex; gap:5px; align-items:center}
 .pizca i{display:block; border-radius:48% 52% 55% 45%/50% 46% 54% 50%}
@@ -178,7 +178,6 @@ footer .cita{font-family:var(--serif); color:var(--soft); margin-top:18px; font-
 
 <main>
 <section class="faltan wrap" aria-label="Cuenta regresiva">
-  <div class="serif">Faltan...</div>
   <div class="cd" id="cd">
     <div><strong id="d">–</strong><small>días</small></div>
     <div><strong id="h">–</strong><small>horas</small></div>
@@ -334,8 +333,6 @@ footer .cita{font-family:var(--serif); color:var(--soft); margin-top:18px; font-
     html+='<span style="left:'+x.toFixed(1)+'%;top:'+y.toFixed(1)+'%;width:'+sz.toFixed(0)+'px;height:'+sz.toFixed(0)+'px;background:'+(function(c){return c==='oro'?'radial-gradient(circle at 32% 30%,#FAD970,#D6A73D 60%,#AF8636)':c;})(colors[Math.floor(r()*colors.length)])+';--o:'+(0.45+r()*0.3).toFixed(2)+';--r:'+rot+'deg;animation-delay:'+(r()*0.9).toFixed(2)+'s"></span>';
     n++;
   }
-  var syms=[['π',6,12],['∞',90,70],['√',8,86],['+',84,14]];
-  syms.forEach(function(m,i){ html+='<b style="left:'+m[1]+'%;top:'+m[2]+'%;font-size:'+(22+i*2)+'px;--o:.4;--r:'+(i%2?12:-10)+'deg;animation-delay:'+(0.4+i*0.15)+'s">'+m[0]+'</b>'; });
   box.innerHTML=html;
 
   /* contador */
