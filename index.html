@@ -81,12 +81,11 @@ h2.titulo{font-family:var(--serif); font-weight:600; font-size:clamp(42px,12vw,5
 /* lugares */
 .banda-lav{background:var(--lavanda)}
 .lugares{padding:10px 28px 56px; display:flex; flex-direction:column; gap:18px}
-.lugar{background:var(--crema); border-radius:28px; padding:22px 22px 22px 16px; display:flex; gap:12px; align-items:flex-start}
-.lugar svg{flex:none; position:relative}
-.lugar svg.ic-anillos{left:-16px; top:-8px}
-.lugar svg.ic-botella{left:-28px; top:-6px}
-.lugar .info{display:flex; flex-direction:column; gap:8px; min-width:0}
-.lugar .que{margin:0; font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#6A4478}
+.lugar{background:var(--crema); border-radius:28px; padding:24px 22px; display:flex; gap:16px; align-items:flex-start}
+.lugar svg.ic{flex:none; width:64px; height:76px; margin-top:5px}
+.lugar .texto-lugar{display:flex; flex-direction:column; gap:8px; min-width:0}
+.lugar .que span{white-space:nowrap}
+.lugar .que{margin:0; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#6A4478}
 .lugar h3{margin:0; font-family:var(--serif); font-weight:600; font-size:26px; line-height:1.05}
 .lugar p{margin:0; font-size:14.5px; line-height:1.5}
 .lugar .btn{align-self:flex-start}
@@ -146,6 +145,49 @@ details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 .js .esperamos.ver{-webkit-clip-path:inset(0 0 0 0); clip-path:inset(0 0 0 0)}
 .sello{width:260px; height:260px; margin-top:6px}
 .pie{background:var(--mandarina); height:120px}
+
+.lugares-grid{display:grid; grid-template-columns:minmax(0,1fr); gap:18px}
+
+/* celulares chicos */
+@media (max-width: 380px){
+  .col,.contador,.video-sec,.tarjeta-wrap,.cierre{padding-left:20px; padding-right:20px}
+  .lugares,.info{padding-left:20px; padding-right:20px}
+  .tarjeta .txt{padding:44px 30px}
+  .tarjeta h2{font-size:27px}
+  .lugar{padding:20px 18px; gap:14px}
+  .lugar svg.ic{width:54px; height:64px}
+  .bloque h3{font-size:34px}
+  .bloque .ilus{width:96px; height:96px}
+  .fest-head h2{font-size:58px}
+  .cd strong{font-size:28px}
+}
+
+/* compu y tablet */
+@media (min-width: 820px){
+  body{font-size:17px}
+  .col{max-width:780px}
+  .portada{padding-top:84px; padding-bottom:44px; max-width:640px}
+  .nombres{font-size:104px}
+  .portada .caps{font-size:14px}
+  .carrusel{max-width:620px}
+  .tarjeta-wrap{padding-top:64px; padding-bottom:64px}
+  .contador{max-width:480px}
+  .lugares{padding-bottom:72px}
+  .lugares-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fest-head{height:280px}
+  .fest-head .flor{width:240px; height:240px; margin-left:-120px}
+  .fest-head h2{font-size:80px; height:240px}
+  .bloque .col{max-width:640px; padding-top:44px; padding-bottom:60px}
+  .bloque h3{font-size:46px}
+  .bloque p{font-size:16px}
+  .bloque .ilus{width:132px; height:132px; right:20px}
+  .info{max-width:720px; padding-top:88px}
+  summary{font-size:17px}
+  .resp{font-size:16px}
+  .video-sec{max-width:680px}
+  .esperamos{font-size:60px}
+  .sello{width:300px; height:300px}
+}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -228,23 +270,25 @@ details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 <section class="banda-lav" id="lugares">
   <div class="col lugares">
     <h2 class="titulo">Lugares <svg class="destello" style="; width:20px; height:20px; animation-delay:0.6s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="#411052"/></svg><svg class="destello" style="; width:13px; height:13px; animation-delay:1.8s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="#F8F5EC"/></svg></h2>
+    <div class="lugares-grid">
     <div class="lugar">
-      <svg class="ic-anillos" width="92" height="92" viewBox="0 0 120 120" fill="none" stroke="#411052" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M45 33 L41 40 L49 49 L60 49 L67 40 L62 33 Z" fill="#B993F8" stroke="none" transform="translate(2 2)"></path><path d="M30 70 C30 54 42 46 54 47 C67 48 76 58 75 71 C74 85 62 94 50 93 C38 92 30 83 30 70 Z"></path><path d="M37 72 C37 61 45 54 54 55 C63 56 69 63 68 72"></path><path d="M56 76 C57 62 69 55 80 57 C92 59 99 70 97 82 C95 94 84 101 73 99 C62 97 55 88 56 76 Z"></path><path d="M63 80 C64 69 72 63 80 64 C88 65 92 73 90 82"></path><path d="M48 46 L42 38 L48 31 L60 31 L66 38 L58 46"></path><path d="M42 38 H66 M48 31 L52 38 L54 46 M60 31 L57 38"></path><path d="M70 32 L77 28 M71 39 L79 40 M66 25 L69 18"></path></svg>
-      <div class="info">
-        <p class="que">Nuestra ceremonia<br>Sáb 06/02 · 11:45 h</p>
+      <svg class="ic" viewBox="28 16 71 85" preserveAspectRatio="xMinYMin meet" fill="none" stroke="#411052" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M45 33 L41 40 L49 49 L60 49 L67 40 L62 33 Z" fill="#B993F8" stroke="none" transform="translate(2 2)"></path><path d="M30 70 C30 54 42 46 54 47 C67 48 76 58 75 71 C74 85 62 94 50 93 C38 92 30 83 30 70 Z"></path><path d="M37 72 C37 61 45 54 54 55 C63 56 69 63 68 72"></path><path d="M56 76 C57 62 69 55 80 57 C92 59 99 70 97 82 C95 94 84 101 73 99 C62 97 55 88 56 76 Z"></path><path d="M63 80 C64 69 72 63 80 64 C88 65 92 73 90 82"></path><path d="M48 46 L42 38 L48 31 L60 31 L66 38 L58 46"></path><path d="M42 38 H66 M48 31 L52 38 L54 46 M60 31 L57 38"></path><path d="M70 32 L77 28 M71 39 L79 40 M66 25 L69 18"></path></svg>
+      <div class="texto-lugar">
+        <p class="que"><span>Nuestra ceremonia</span><br><span>Sáb 06/02 · 11:45 h</span></p>
         <h3>Catedral Metropolitana de Santa Fe</h3>
         <p>Parroquia de Todos los Santos<br>Av. Gral. López 2672, Santa Fe</p>
         <a class="btn linea" href="https://www.google.com/maps/search/?api=1&amp;query=Catedral+Metropolitana+de+Santa+Fe+Av.+Gral.+L%C3%B3pez+2672+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a>
       </div>
     </div>
     <div class="lugar">
-      <svg class="ic-botella" width="92" height="92" viewBox="0 0 120 120" fill="none" stroke="#411052" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M50 74 C56 72 64 72 70 74 L69 92 C63 94 57 94 51 92 Z" fill="#B993F8" stroke="none" transform="translate(2 2)"></path><path d="M50 104 C47 90 46 74 48 64 C50 56 54 52 54 44 L54 26 C54 22 66 22 66 26 L66 44 C66 52 70 56 72 64 C74 74 73 90 70 104 C64 106 56 106 50 104 Z"></path><path d="M55 26 L55 18 C55 15 65 15 65 18 L65 26"></path><path d="M50 74 C56 72 64 72 70 74 L69 92 C63 94 57 94 51 92 Z"></path><path d="M55 84 C57 80 59 88 61 83 C63 79 64 86 66 82"></path><path d="M60 46 C52 38 44 44 50 48 C54 50 58 48 60 46 C62 48 66 50 70 48 C76 44 68 38 60 46 Z"></path><path d="M60 46 C57 52 52 58 47 62 M60 46 C63 53 67 58 72 61"></path><path d="M80 30 L86 26 M82 38 L89 38 M78 22 L81 16"></path></svg>
-      <div class="info">
+      <svg class="ic" viewBox="44 14 44 94" preserveAspectRatio="xMinYMin meet" fill="none" stroke="#411052" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M50 74 C56 72 64 72 70 74 L69 92 C63 94 57 94 51 92 Z" fill="#B993F8" stroke="none" transform="translate(2 2)"></path><path d="M50 104 C47 90 46 74 48 64 C50 56 54 52 54 44 L54 26 C54 22 66 22 66 26 L66 44 C66 52 70 56 72 64 C74 74 73 90 70 104 C64 106 56 106 50 104 Z"></path><path d="M55 26 L55 18 C55 15 65 15 65 18 L65 26"></path><path d="M50 74 C56 72 64 72 70 74 L69 92 C63 94 57 94 51 92 Z"></path><path d="M55 84 C57 80 59 88 61 83 C63 79 64 86 66 82"></path><path d="M60 46 C52 38 44 44 50 48 C54 50 58 48 60 46 C62 48 66 50 70 48 C76 44 68 38 60 46 Z"></path><path d="M60 46 C57 52 52 58 47 62 M60 46 C63 53 67 58 72 61"></path><path d="M80 30 L86 26 M82 38 L89 38 M78 22 L81 16"></path></svg>
+      <div class="texto-lugar">
         <p class="que">Nuestros festejos</p>
         <h3>Cabañas La Luisa</h3>
         <p>C. Montenegro, Arroyo Leyes, Santa Fe</p>
         <a class="btn linea" href="https://www.google.com/maps/search/?api=1&amp;query=Caba%C3%B1as+La+Luisa+Arroyo+Leyes+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a>
       </div>
+    </div>
     </div>
   </div>
 </section>
