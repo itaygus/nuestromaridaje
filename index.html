@@ -80,9 +80,11 @@ h2.titulo{font-family:var(--serif); font-weight:600; font-size:clamp(42px,12vw,5
 
 /* lugares */
 .banda-lav{background:var(--lavanda)}
-.lugares{padding:10px 0 56px; display:flex; flex-direction:column; gap:18px}
+.lugares{padding:10px 28px 56px; display:flex; flex-direction:column; gap:18px}
 .lugar{background:var(--crema); border-radius:28px; padding:22px 22px 22px 16px; display:flex; gap:12px; align-items:flex-start}
-.lugar svg{flex:none; margin-top:-6px}
+.lugar svg{flex:none; position:relative}
+.lugar svg.ic-anillos{left:-16px; top:-8px}
+.lugar svg.ic-botella{left:-28px; top:-6px}
 .lugar .info{display:flex; flex-direction:column; gap:8px; min-width:0}
 .lugar .que{margin:0; font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#6A4478}
 .lugar h3{margin:0; font-family:var(--serif); font-weight:600; font-size:26px; line-height:1.05}
@@ -105,7 +107,7 @@ h2.titulo{font-family:var(--serif); font-weight:600; font-size:clamp(42px,12vw,5
 .pena{background:var(--uva); color:var(--crema)}
 
 /* info necesaria */
-.info{padding:64px 0 56px}
+.info{padding:64px 28px 56px}
 .info h2.titulo{margin-bottom:22px}
 details{border-top:1px solid var(--linea)}
 details:last-of-type{border-bottom:1px solid var(--linea)}
@@ -139,9 +141,9 @@ details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 
 /* cierre */
 .cierre{padding:0 28px 30px; display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center}
-.esperamos{margin:0; font-family:var(--script); font-weight:400; font-size:48px; line-height:1.3; color:var(--mandarina); padding:10px 16px; clip-path:inset(0 100% 0 0)}
-.esperamos.ver{animation:escribir 2.6s cubic-bezier(.45,.05,.35,1) forwards}
-@keyframes escribir{to{clip-path:inset(0 0 0 0)}}
+.esperamos{margin:0; font-family:var(--script); font-weight:400; font-size:48px; line-height:1.3; color:var(--mandarina); padding:10px 16px}
+.js .esperamos{-webkit-clip-path:inset(0 100% 0 0); clip-path:inset(0 100% 0 0); transition:clip-path 2.6s cubic-bezier(.45,.05,.35,1), -webkit-clip-path 2.6s cubic-bezier(.45,.05,.35,1)}
+.js .esperamos.ver{-webkit-clip-path:inset(0 0 0 0); clip-path:inset(0 0 0 0)}
 .sello{width:260px; height:260px; margin-top:6px}
 .pie{background:var(--mandarina); height:120px}
 
@@ -149,11 +151,12 @@ details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
   html{scroll-behavior:auto}
   .destello{animation:none}
   .foto{transition:none}
-  .esperamos{clip-path:none; animation:none}
+  .js .esperamos{-webkit-clip-path:none; clip-path:none; transition:none}
 }
 </style>
 </head>
 <body>
+<script>document.documentElement.className+=' js';</script>
 
 <header class="portada" aria-label="Portada">
   <svg class="destello" style="left:34px; top:52px; width:22px; height:22px; animation-delay:0s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="#D6A73D"/></svg>
@@ -226,16 +229,16 @@ details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
   <div class="col lugares">
     <h2 class="titulo">Lugares <svg class="destello" style="; width:20px; height:20px; animation-delay:0.6s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="#411052"/></svg><svg class="destello" style="; width:13px; height:13px; animation-delay:1.8s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z" fill="#F8F5EC"/></svg></h2>
     <div class="lugar">
-      <svg class="" width="92" height="92" viewBox="0 0 120 120" fill="none" stroke="#411052" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M45 33 L41 40 L49 49 L60 49 L67 40 L62 33 Z" fill="#B993F8" stroke="none" transform="translate(2 2)"></path><path d="M30 70 C30 54 42 46 54 47 C67 48 76 58 75 71 C74 85 62 94 50 93 C38 92 30 83 30 70 Z"></path><path d="M37 72 C37 61 45 54 54 55 C63 56 69 63 68 72"></path><path d="M56 76 C57 62 69 55 80 57 C92 59 99 70 97 82 C95 94 84 101 73 99 C62 97 55 88 56 76 Z"></path><path d="M63 80 C64 69 72 63 80 64 C88 65 92 73 90 82"></path><path d="M48 46 L42 38 L48 31 L60 31 L66 38 L58 46"></path><path d="M42 38 H66 M48 31 L52 38 L54 46 M60 31 L57 38"></path><path d="M70 32 L77 28 M71 39 L79 40 M66 25 L69 18"></path></svg>
+      <svg class="ic-anillos" width="92" height="92" viewBox="0 0 120 120" fill="none" stroke="#411052" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M45 33 L41 40 L49 49 L60 49 L67 40 L62 33 Z" fill="#B993F8" stroke="none" transform="translate(2 2)"></path><path d="M30 70 C30 54 42 46 54 47 C67 48 76 58 75 71 C74 85 62 94 50 93 C38 92 30 83 30 70 Z"></path><path d="M37 72 C37 61 45 54 54 55 C63 56 69 63 68 72"></path><path d="M56 76 C57 62 69 55 80 57 C92 59 99 70 97 82 C95 94 84 101 73 99 C62 97 55 88 56 76 Z"></path><path d="M63 80 C64 69 72 63 80 64 C88 65 92 73 90 82"></path><path d="M48 46 L42 38 L48 31 L60 31 L66 38 L58 46"></path><path d="M42 38 H66 M48 31 L52 38 L54 46 M60 31 L57 38"></path><path d="M70 32 L77 28 M71 39 L79 40 M66 25 L69 18"></path></svg>
       <div class="info">
-        <p class="que">Nuestra ceremonia · Sáb 06/02 · 11:45 h</p>
+        <p class="que">Nuestra ceremonia<br>Sáb 06/02 · 11:45 h</p>
         <h3>Catedral Metropolitana de Santa Fe</h3>
         <p>Parroquia de Todos los Santos<br>Av. Gral. López 2672, Santa Fe</p>
         <a class="btn linea" href="https://www.google.com/maps/search/?api=1&amp;query=Catedral+Metropolitana+de+Santa+Fe+Av.+Gral.+L%C3%B3pez+2672+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a>
       </div>
     </div>
     <div class="lugar">
-      <svg class="" width="92" height="92" viewBox="0 0 120 120" fill="none" stroke="#411052" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M50 74 C56 72 64 72 70 74 L69 92 C63 94 57 94 51 92 Z" fill="#B993F8" stroke="none" transform="translate(2 2)"></path><path d="M50 104 C47 90 46 74 48 64 C50 56 54 52 54 44 L54 26 C54 22 66 22 66 26 L66 44 C66 52 70 56 72 64 C74 74 73 90 70 104 C64 106 56 106 50 104 Z"></path><path d="M55 26 L55 18 C55 15 65 15 65 18 L65 26"></path><path d="M50 74 C56 72 64 72 70 74 L69 92 C63 94 57 94 51 92 Z"></path><path d="M55 84 C57 80 59 88 61 83 C63 79 64 86 66 82"></path><path d="M60 46 C52 38 44 44 50 48 C54 50 58 48 60 46 C62 48 66 50 70 48 C76 44 68 38 60 46 Z"></path><path d="M60 46 C57 52 52 58 47 62 M60 46 C63 53 67 58 72 61"></path><path d="M80 30 L86 26 M82 38 L89 38 M78 22 L81 16"></path></svg>
+      <svg class="ic-botella" width="92" height="92" viewBox="0 0 120 120" fill="none" stroke="#411052" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M50 74 C56 72 64 72 70 74 L69 92 C63 94 57 94 51 92 Z" fill="#B993F8" stroke="none" transform="translate(2 2)"></path><path d="M50 104 C47 90 46 74 48 64 C50 56 54 52 54 44 L54 26 C54 22 66 22 66 26 L66 44 C66 52 70 56 72 64 C74 74 73 90 70 104 C64 106 56 106 50 104 Z"></path><path d="M55 26 L55 18 C55 15 65 15 65 18 L65 26"></path><path d="M50 74 C56 72 64 72 70 74 L69 92 C63 94 57 94 51 92 Z"></path><path d="M55 84 C57 80 59 88 61 83 C63 79 64 86 66 82"></path><path d="M60 46 C52 38 44 44 50 48 C54 50 58 48 60 46 C62 48 66 50 70 48 C76 44 68 38 60 46 Z"></path><path d="M60 46 C57 52 52 58 47 62 M60 46 C63 53 67 58 72 61"></path><path d="M80 30 L86 26 M82 38 L89 38 M78 22 L81 16"></path></svg>
       <div class="info">
         <p class="que">Nuestros festejos</p>
         <h3>Cabañas La Luisa</h3>
@@ -407,11 +410,15 @@ details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
   setInterval(function(){ if(!document.hidden) show(idx+1); },4000);
 
   /* te esperamos: se escribe al aparecer */
-  var esp=document.getElementById('esperamos');
+  var esp=document.getElementById('esperamos'), bloque=esp.parentNode, hecho=false;
+  function escribir(){ if(hecho) return; hecho=true; esp.classList.add('ver'); }
+  function cerca(){ var r=bloque.getBoundingClientRect(); return r.top < (window.innerHeight||document.documentElement.clientHeight)*0.85 && r.bottom > 0; }
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ esp.classList.add('ver'); io.disconnect(); } }); },{threshold:0.6});
-    io.observe(esp);
-  } else { esp.classList.add('ver'); }
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ escribir(); io.disconnect(); } }); },{threshold:0.25});
+    io.observe(bloque);
+  }
+  window.addEventListener('scroll',function(){ if(cerca()) escribir(); },{passive:true});
+  if(cerca()) escribir();
 
   /* copiar CBU y alias */
   document.querySelectorAll('.copiar').forEach(function(btn){
